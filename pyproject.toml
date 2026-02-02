@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slim"
+version = "0.1.0"
+description = "Simultaneous Learning and Inference Model of Preception."
+dependencies = [
+	"numpy",
+	"matplotlib",
+	"seaborn",
+	"tqdm",
+	"networkx"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
