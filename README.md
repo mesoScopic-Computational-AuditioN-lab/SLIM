@@ -64,6 +64,10 @@ The latter gives you more flexibility, e.g. for adjusting the sensor at each ite
 
 ### 4. Analyse results
 
+Here we show some useful plots based on what the model has been trained with:
+
+**State Prediction Error**
+
 ```python
 plt.figure(figsize=(20,1))
 plt.plot(np.array(model.state_prediction_errors))
@@ -73,7 +77,8 @@ plt.savefig('./docs/state_prediction_errors.png')
 
 Note that state prediction errors are not directly used in the model, Instead we use a more informative signal which is an error of the transitions, i.e. *inferred - expected* transition. We call this signal a context weighted error potential. It can be read using `model.context_weighted_error_potential`. Note that the norm of this signal is equivalent to the `state_prediction_error`.
 
-Learned Representation
+**Learned Internal Representation**
+
 ```python
 from slim import viz
 viz.create_digraph(model, states=['A','B','C'], axis=plt.subplot())
@@ -82,7 +87,8 @@ plt.savefig('./docs/learned_model.png')
 ![Package workflow](docs/learned_model.png)
 
 
-Beliefs (Posteriors)
+**Beliefs (Posteriors)**
+
 ```python
 plt.figure(figsize=(20,10))
 plt.imshow(model.bel.T)
@@ -90,7 +96,7 @@ plt.savefig('./docs/model_beliefs.png')
 ```
 ![Package workflow](docs/model_beliefs.png)
 
-Predictions 
+**State Predictions** 
 ```python
 plt.figure(figsize=(20,10))
 plt.imshow(np.array(model.x_hat_hist).T)
