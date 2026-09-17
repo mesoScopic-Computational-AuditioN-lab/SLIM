@@ -1,6 +1,6 @@
 # SLIM
 
-Code for the Simultaneous Learning and Inference Model (SLIM).
+Code for the Simultaneous Learning and Inference Model (SLIM). Preprint will follow soon!
 
 ## Abstract
 
