@@ -1,11 +1,10 @@
 # SLIM
 
-Simultaneous Learning and Inference Model
+Code for the Simultaneous Learning and Inference Model (SLIM).
 
 ## Abstract
 
-The brain is continuously faced with noise in the soundscape and uncertainty in the input to the ears. This contributes to the idea that perception is not merely a consequence of sensory input, but rather, an inferential process that combines sensory information with expectations to determine the most probable state of the world. However, the algorithm through which the brain could realize this inferential process as well as its implementation are not yet well understood. In this work, we developed a novel framework for simultaneous learning and inference using first principles. Our model relies on basic functions (Bayesian filtering and local Hebbian learning) that are implementable using biologically realistic neural arithmetic and we show that such framework allows unbiased inference and flexible model updating under noise and changing dynamics. In phenomenological simulations, we highlight how our approach can reproduce results from empirical studies (local-global prediction error effects). Additionally, we show our models' capability of explaining behavioral decisions in two empirical studies. Our model can be used to test (in silico) hypotheses related to predictive processing in noisy and non deterministic environments without relying on explicit global objective functions (like Variational Free Energy) or on pre-defined parametric families of distributions (Hierarchical Gaussian Filters).
-
+Perception has been proposed to be not a result of merely an integration of noisy sensory input but an inferential process that combines sensory evidence with prior expectations to infer the most probable latent states of the environment. Exact Bayesian inference is intractable in the continuous, high-dimensional state spaces of the natural world. Variational schemes address this by restricting the form of the posterior, whereas sampling schemes represent the posterior with a finite set of samples. In both cases the approximation concerns the posterior rather than the state space over which it is defined. Here we place the approximation elsewhere. Rather than restricting the form of the posterior, we restrict the state space, modeling environmental states as discrete and thereby making Bayesian filtering exact. Beliefs are then unconstrained in shape and what has to be learned can be reduced to a transition matrix updated online by a local rule. The cost is that the states, rather than the distribution, must be specified in advance. The Simultaneous Learning and Inference Model (SLIM) combines this exact filtering with a gated Hebbian rule that learns transitions from inferred rather than observed states. In simulations SLIM recovers environmental dynamics under sensory noise and adapts when those dynamics change, with error growing only once the sensor becomes uninformative. A hierarchical instantiation reproduces local and global prediction error effects. Applied to two auditory decision-making experiments under noise, SLIM reproduces behavioral signatures of expectation and supplies trial-level measures of expectation and surprise. Exact inference over a small discrete state space with a single local Hebbian rule is therefore sufficient to account for these phenomena, without an explicit optimization objective and without a parametric approximation to the posterior.
 ## Features
 
 The SLIM model can
@@ -18,7 +17,7 @@ The SLIM model can
 
 ## Installation
 
-You can install the model using pip. After cloning/downloading the package, navigate to `/path/to/SLIM/` and run the following:
+You can install the SLIM model using pip. After cloning/downloading the package, navigate to `/path/to/SLIM/` and run the following:
 
 ```bash
 pip install .
@@ -26,7 +25,7 @@ pip install .
 
 ## Quick Start (Tutorial)
 
-This short tutorial shows a common use case.
+This short tutorial shows a common use case for SLIM.
 
 ### 1. Import the package
 

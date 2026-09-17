@@ -1,12 +1,10 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 import networkx as nx
 import matplotlib.colors as mcolors
 from matplotlib.patches import FancyArrowPatch
-
-# from copy import deepcopy
 
 
 def plot_internal_model(data, **kwargs):
@@ -59,18 +57,7 @@ def barplot(data, **kwargs):
 
 
 def plot_history(data, **kwargs):
-    """
 
-    :param data:
-    :param kwargs:
-    Extra Parameters
-    ----------
-    cmap
-    grid
-    states
-    title
-    :return:
-    """
     if isinstance(data, list):
         data = np.array(data)
 
